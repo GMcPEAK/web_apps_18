@@ -1,6 +1,77 @@
 <!DOCTYPE html>
 <html>
-<h1>Assignment 1: Duplicate Me!</h1>
+<style>
+	body {
+	color: #fff;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease;
+	-moz-animation: Gradient 15s ease;
+	animation: Gradient 15s ease;
+}
+
+	h1 {
+	}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+.linear-wipe {
+  text-align: center;
+  
+  background: linear-gradient(to left, #EE7752 0%, #23D5AB 20%, #23A6D5 40%, #E73C7E 60%, #EE7752 80%);
+  background-size: 200% auto;
+  
+  color: #23D5AB;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  animation: shine 15s linear;
+}
+
+@keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+}
+</style>
+
+<h1 class="linear-wipe">Assignment 1: Duplicate Me!</h1>
 
 	For this assignment, you are to follow these instructions to duplicate what you see here as a web page. For example, the text above is the largest header you can create using a normal HTML tag. For this assignment, you will only need basic tags, without attributes, so no fancy stuff! Also, everything should be hand coded in a text editor. If I see the telltale junk that web design software puts in, then it will not be satisfactory homework.
 
