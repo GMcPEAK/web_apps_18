@@ -8,6 +8,26 @@
 			i[x].style.color = "yellow";
 		}
 	}
+
+	function woah() {
+		alert("OHHHHHH WOOOOOOOOW!");
+		var i = document.getElementsByTagName("p");
+		for (var x = 0; x < i.length; x++) {
+			i[x].style.color = "pink";
+		}
+		i = document.getElementsByTagName("h2");
+		for (var x = 0; x < i.length; x++) {
+			i[x].style.color = "pink";
+		}
+		i = document.getElementsByTagName("ol");
+		for (var x = 0; x < i.length; x++) {
+			i[x].style.color = "pink";
+		}
+		i = document.getElementsByTagName("td");
+		for (var x = 0; x < i.length; x++) {
+			i[x].style.color = "pink";
+		}
+	}
 </script>
 <style>
 	body {
@@ -114,7 +134,7 @@
 }
 </style>
 
-<h1 class="linear-wipe">Assignment 1: Duplicate Me!</h1>
+<h1 class="linear-wipe"  ondblclick = "woah()">Assignment 1: Duplicate Me!</h1>
 
 	<p> For this assignment, you are to follow these instructions to duplicate what you see here as a web page. For example, the text above is the largest header you can create using a normal HTML tag. For this assignment, you will only need basic tags, without attributes, so no fancy stuff! Also, everything should be hand coded in a text editor. If I see the telltale junk that web design software puts in, then it will not be satisfactory homework.</p>
 
