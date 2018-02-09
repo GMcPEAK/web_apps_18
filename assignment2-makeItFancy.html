@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html>
+<script>
+	function wow() {
+		alert("WOW!");
+		var i = document.getElementsByTagName("h2");
+		for (var x = 0; x < 1; x++) {
+			i[x].style.color = "yellow";
+		}
+	}
+</script>
 <style>
 	body {
 		color: #fff;
@@ -111,7 +120,7 @@
 
 <p class = "red"><strong><em>This is strong and emphasized text!</em></strong></p>
 
-<h2>OMG this is totally the 2nd biggest header. YES!</h2>
+<h2 onclick = "wow()">OMG this is totally the 2nd biggest header. YES!</h2>
 
 <ol class = "blue">
 	<li> Here we have an <strike>unordered</strike> ordered list.</li>
