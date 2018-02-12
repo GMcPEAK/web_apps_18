@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<style>
+	td {
+		height: 100%;
+		width: 100%;
+	}
+</style>
+<script>
+	window.addEventListener("load", go());
+
+	function go() {
+    	window.setInterval(create(), 1);
+	}
+
+	function create() {
+		
+	}
+
+	function getRandomColor() {
+  		var letters = '0123456789ABCDEF';
+  		var color = '#';
+  		for (var i = 0; i < 6; i++) {
+    		color += letters[Math.floor(Math.random() * 16)];
+  		}
+  		return color;
+	}
+</script>
+<html>
+	<body>
+		<table>
+  		</table>
+  	</body>
+</html>
