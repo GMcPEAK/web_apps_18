@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html>
+
+<p id="x"></p>
+
 <script>
-	function colorChange (x) {
-		var o = ["red", "green", "blue"];
-		var c = Math.floor(Math.random()*2);
-		x.style.color = o[c];
+	document.getElementById("x").addEventListener("load", myFunction());
+
+	function myFunction() {
+    	var str = "Reload this page. Do it. You won't.";
+    	var result = str.fontcolor(getRandomColor());
+    	document.getElementById("x").innerHTML = result;
+	}
+
+	function getRandomColor() {
+  		var letters = '0123456789ABCDEF';
+  		var color = '#';
+  		for (var i = 0; i < 6; i++) {
+    		color += letters[Math.floor(Math.random() * 16)];
+  		}
+  		return color;
 	}
 </script>
-<p onload = "colorChange(this)">Reload the page. Do it. You won't.</p>
 </html>
