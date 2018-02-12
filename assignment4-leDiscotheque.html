@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <style>
-	td {
-		height: 100%;
-		width: 100%;
-	}
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	
+}
+.grid-item {
+	border: 1px solid rgba(0, 0, 0, 0.8);
+	padding: 20px;
+	font-size: 30px;
+	text-align: center;
+}
 </style>
+
 <script>
-	window.addEventListener("load", go());
+	window.setInterval(change(), 1);
 
-	function go() {
-    	window.setInterval(create(), 1);
-	}
-
-	function create() {
-		
+	function change() {
+		var x = document.getElementsByClassName("grid-item");
+		for (var i = 0; i < x.length; i++) {
+			x[i].style.color = getRandomColor();
+		}
 	}
 
 	function getRandomColor() {
@@ -25,9 +32,26 @@
   		return color;
 	}
 </script>
+
 <html>
-	<body>
-		<table>
-  		</table>
-  	</body>
+<body>
+
+<div class="grid-container">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>  
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>  
+    <div class="grid-item">7</div>
+    <div class="grid-item">8</div>
+    <div class="grid-item">9</div>
+    <div class="grid-item">10</div>
+    <div class="grid-item">11</div>
+    <div class="grid-item">12</div>
+    <div class="grid-item">13</div>
+    <div class="grid-item">14</div>
+    <div class="grid-item">15</div>
+    <div class="grid-item">16</div>  
+</div>
 </html>
