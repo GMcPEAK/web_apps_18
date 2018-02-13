@@ -11,47 +11,97 @@
 	font-size: 30px;
 	text-align: center;
 }
+
+body {
+	color: #fff;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 1s ease infinite;
+	-moz-animation: Gradient 1s ease infinite;
+	animation: Gradient 1s ease infinite;
+	font-family: "Comic Sans MS";
+}
+
+@-webkit-keyframes Gradient {
+		0% {
+			background-position: 0% 50%
+		}
+		50% {
+			background-position: 100% 50%
+		}
+		100% {
+			background-position: 0% 50%
+		}
+	}
+	@-moz-keyframes Gradient {
+		0% {
+			background-position: 0% 50%
+		}
+		50% {
+			background-position: 100% 50%
+		}
+		100% {
+			background-position: 0% 50%
+		}
+	}
+	@keyframes Gradient {
+		0% {
+			background-position: 0% 50%
+		}
+		50% {
+			background-position: 100% 50%
+		}
+		100% {
+			background-position: 0% 50%
+		}
+	}
 </style>
 
 <script>
-	window.setInterval(change(), 1);
+document.addEventListener("load", myFunction());
 
-	function change() {
-		var x = document.getElementsByClassName("grid-item");
-		for (var i = 0; i < x.length; i++) {
-			x[i].style.color = getRandomColor();
+var myVar;
+
+function myFunction() {
+    myVar = setInterval(change, 1);
+}
+
+function change () {
+	var i = document.getElementsByClassName("grid-item");
+		for (var x = 0; x < i.length; x++) {
+			i[x].style.backgroundColor = getRandomColor();
 		}
-	}
+}
 
-	function getRandomColor() {
-  		var letters = '0123456789ABCDEF';
-  		var color = '#';
-  		for (var i = 0; i < 6; i++) {
-    		color += letters[Math.floor(Math.random() * 16)];
-  		}
-  		return color;
-	}
+function getRandomColor() {
+  	var letters = '0123456789ABCDEF';
+  	var color = '#';
+  	for (var i = 0; i < 6; i++) {
+   		color += letters[Math.floor(Math.random() * 16)];
+  	}
+  	return color;
+}
 </script>
 
 <html>
 <body>
 
 <div class="grid-container">
-    <div class="grid-item">1</div>
-    <div class="grid-item">2</div>
-    <div class="grid-item">3</div>  
-    <div class="grid-item">4</div>
-    <div class="grid-item">5</div>
-    <div class="grid-item">6</div>  
-    <div class="grid-item">7</div>
-    <div class="grid-item">8</div>
-    <div class="grid-item">9</div>
-    <div class="grid-item">10</div>
-    <div class="grid-item">11</div>
-    <div class="grid-item">12</div>
-    <div class="grid-item">13</div>
-    <div class="grid-item">14</div>
-    <div class="grid-item">15</div>
-    <div class="grid-item">16</div>  
+    <div class="grid-item">OH</div>
+    <div class="grid-item">MAN</div>
+    <div class="grid-item">OH</div>  
+    <div class="grid-item">MAN</div>
+    <div class="grid-item">I</div>
+    <div class="grid-item">AM</div>  
+    <div class="grid-item">NOT</div>
+    <div class="grid-item">WITH</div>
+    <div class="grid-item">COMPUTERS</div>
+    <div class="grid-item">PLS</div>
+    <div class="grid-item">TO</div>
+    <div class="grid-item">HALP</div>
+    <div class="grid-item">OH</div>
+    <div class="grid-item">MAN</div>
+    <div class="grid-item">OH</div>
+    <div class="grid-item">MAN</div>  
 </div>
 </html>
