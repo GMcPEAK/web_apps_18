@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+	body {
+		text-align: center;
+	}
+</style>
+<script>
+	$(document).ready(function(){
+		var i = document.getElementsByClassName("hideable");
+		var x = 1;
+		setGallery (i, x);
+		x = 0;
+		$("#hidebutton").click(function(){
+			if (x < i.length) {
+				$(i[x]).width(70); // Units are assumed to be pixels
+				$(i[x]).height(70);
+				x++;
+				$(i[x]).width(700); // Units are assumed to be pixels
+				$(i[x]).height(700);
+			} else {
+				x = 0;
+				$(i[x]).width(700);
+				$(i[x]).height(700);
+			}
+		});
+	});
+
+	function setGallery (i, x) {
+		while (x < i.length) {
+			$(i[x]).width(70);
+			$(i[x]).height(70);
+			x++;
+		}
+	}
+</script> 
+<body>
+	<h2>our best boi:</h2>
+	<h1>W A L U I G I</h1>
+	<button id = "hidebutton">Click to see more Waluigi</button>
+	<br/>
+	<div class = "gallery">
+		<img src = "https://upload.wikimedia.org/wikipedia/en/4/46/Waluigi.png" class = "hideable"></img>
+		<img src = "https://vignette.wikia.nocookie.net/wario/images/c/c9/WaluigiMP8a.PNG/revision/latest?cb=20150109030500" class = "hideable"></img>
+		<img src = "https://www.geek.com/wp-content/uploads/2018/01/waluigi-625x352.jpg" class = "hideable"></img>
+	</div>
+</body>
+</html>
