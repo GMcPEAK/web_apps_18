@@ -17,8 +17,16 @@
 	h1, #face {
 		opacity: 0.0;
 	}
+	h3 {
+		font-family: "Comic Sans MS";
+		color: white;
+		text-decoration: underline;
+	}
 	button {
 		background-color: yellow;
+	}
+	a {
+		color: yellow;
 	}
 </style>
 <script>
@@ -35,15 +43,21 @@
 		x = 0;
 		$("#hidebutton").click(function(){
 			if (x < i.length) {
-				$(i[x]).width(70); // Units are assumed to be pixels
-				$(i[x]).height(70);
+				$(i[x]).animate({
+					width: "70px",
+					height: "70px"
+				}); // Units are assumed to be pixels
 				x++;
-				$(i[x]).width(500); // Units are assumed to be pixels
-				$(i[x]).height(500);
+				$(i[x]).animate({
+					width: "500px",
+					height: "500px"
+				});
 			} else {
 				x = 0;
-				$(i[x]).width(500);
-				$(i[x]).height(500);
+				$(i[x]).animate({
+					width: "500px",
+					height: "500px"
+				});
 			}
 		});
 	});
@@ -57,7 +71,7 @@
 	}
 </script> 
 <head>
-	<title>Waluigi #1!</title>
+	<title>Waluigi Numba Wan!</title>
 	<div id = "name">
 		<h2>our best boi:</h2>
 		<h1>W A L U I G I</h1>
@@ -67,14 +81,26 @@
 </head>
 <body>
 	<div class = "gallery">
+		<h3> PHOTOS OF OUR BOI:</h3>
+		<button id = "hidebutton">Click to see more Waluigi</button><br><br/>
 		<img src = "https://upload.wikimedia.org/wikipedia/en/4/46/Waluigi.png" class = "hideable" height = 500 width = 500></img>
 		<img src = "https://vignette.wikia.nocookie.net/wario/images/c/c9/WaluigiMP8a.PNG/revision/latest?cb=20150109030500" class = "hideable"></img>
 		<img src = "https://www.geek.com/wp-content/uploads/2018/01/waluigi-625x352.jpg" class = "hideable"></img>
+		<img src = "https://i.ytimg.com/vi/zM5TSBLJYi8/maxresdefault.jpg" class = "hideable"></img>
+		<img src = "https://pm1.narvii.com/6451/74727cbeec1c0e5c9d6cda341988aab19140e832_hq.jpg" class = "hideable"></img>
+		<img src = "https://ih1.redbubble.net/image.495435704.3061/flat,750x1000,075,t.u2.jpg" class = hideable></img>
+		<img src = "https://orig00.deviantart.net/2301/f/2017/154/1/b/leg_dab_by_igotanewaccountomg-dbbg7jy.png" class = "hideable"></img>
+
 	</div>
-	<button id = "hidebutton">Click to see more Waluigi</button><br><br/>
+	<div>
+		<h3>CLICK <a href = "https://www.reddit.com/r/Waluigi/">HERE</a> TO TALK WITH OTHER WA-LOVERS.</h3>
+		<h3>WANT TO KNOW ABOUT AN UPCOMING WALUIGI VIDEO GAME? CLICK <a href = "https://www.reddit.com/r/seaofgreed/">HERE!</a></h3>
+		<h3>CLICK <a href = "https://www.amazon.com/Super-Mario-Bros-Waluigi-Halloween/dp/B005EPMO6Y/ref=sr_1_1?ie=UTF8&qid=1518569419&sr=8-1&keywords=waluigi+costume">HERE</a> TO FLAUNT YOUR PURPLE FEVER.</h3>
+	</div>
+	<img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Waluigi_emblem.svg/2000px-Waluigi_emblem.svg.png" height = "70" width = "70"></img>
 	<div class = "music">
 		<iframe src="https://www.youtube.com/embed/YM4J971Pv8s?autoplay=1" height="1" width="1">
-			<p>Your browser does not support chill beats with Waluigi.</p>
+			<p>Your browser does not support chill beats with Waluigi :/</p>
 		</iframe>
 	</div>
 </body>
