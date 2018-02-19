@@ -5,8 +5,8 @@
 </head>
 <html>
 	<body onload="setInterval(function(){gameloop();},35)"onkeydown="keydowner(event)"onkeyup="keyupper(event)">
-		<div id="moveme">A</div>
-		<div id="enemy">B</div>
+		<div class="moveable" id = "bob">A</div>
+		<div class="moveable" id = "devil">B</div>
 	</body>
 	<script>
     	var key_w = false;
@@ -23,7 +23,7 @@
   			if (key_a) { x-=speed; }
   			if (key_s) { y+=speed; }
   			if (key_d) { x+=speed; }
-  			var dude = document.getElementById("moveme");
+  			var dude = document.getElementById("bob");
   			dude.style.left = x + "px";
   			dude.style.top = y + "px";
 		}
@@ -47,10 +47,12 @@
 
 		function fire () {
 			var area = document.createElement("div");                     // Create a <div> element
-			var t = document.createTextNode("This is a paragraph");       // Create a text node
+			var t = document.createTextNode("pew-pew");       // Create a text node
 			area.appendChild(t);                                          // Append the text to <p>
-			document.body.appendChild(area); 
-			area.style.left = "300px";                           
+			document.body.appendChild(area);
+			area.setAttribute("class", "moveable"); 
+			area.style.left = x + "px";
+			area.style.top = y + "px";                           
 		}
 	</script>
 </html>
