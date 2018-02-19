@@ -6,6 +6,7 @@
 <html>
 	<body onload="setInterval(function(){gameloop();},35)"onkeydown="keydowner(event)"onkeyup="keyupper(event)">
 		<div id="moveme">A</div>
+		<div id="enemy">B</div>
 	</body>
 	<script>
     	var key_w = false;
@@ -48,9 +49,8 @@
 			var area = document.createElement("div");                     // Create a <div> element
 			var t = document.createTextNode("This is a paragraph");       // Create a text node
 			area.appendChild(t);                                          // Append the text to <p>
-			area.setAttribute("id", "BobBullet");
-			area.style.left = "100px";
-			document.body.appendChild(area);                              // Append <div> to <body>
-			}
+			document.body.appendChild(area); 
+			area.style.left = "300px";                           
+		}
 	</script>
 </html>
