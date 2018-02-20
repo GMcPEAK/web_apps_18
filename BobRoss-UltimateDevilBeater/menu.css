@@ -8,3 +8,6 @@ body{
 	left: 25em;
 	color: white;
 }
+iframe {
+	border: 0px;
+}
