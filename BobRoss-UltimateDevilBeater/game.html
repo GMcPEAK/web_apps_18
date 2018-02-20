@@ -8,6 +8,7 @@
 		<div class="moveable" id = "bob">A</div>
 		<div class="moveable" id = "devil">B</div>
 	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
     	var key_w = false;
 		var key_a = false;
@@ -34,7 +35,7 @@
  			if (k == 65) { key_a = true; }
  			if (k == 83) { key_s = true; }
  			if (k == 68) { key_d = true; }
- 			if (k == 32) { fire() }
+ 			if (k == 32) { fire(k) }
 		}
 
 		function keyupper(event) {
@@ -45,14 +46,39 @@
  			if (k == 68) { key_d = false; }
 		}
 
-		function fire () {
+		function fire (k) {
 			var area = document.createElement("div");                     // Create a <div> element
 			var t = document.createTextNode("pew-pew");       // Create a text node
 			area.appendChild(t);                                          // Append the text to <p>
 			document.body.appendChild(area);
 			area.setAttribute("class", "moveable"); 
 			area.style.left = x + "px";
-			area.style.top = y + "px";                           
+			area.style.top = y + "px";
+			if (key_w == true) {
+				bulletTravelUp(area, x, y);
+			} else if (key_a == true) {
+				bulletTravelLeft(area, x, y);
+			} else if (key_s == true) {
+				bulletTravelDown(area, x, y);
+			} else {
+				bulletTravelRight(area, x, y);
+			}                
+		}
+		function bulletTravelUp (bullet, i, j) {
+			$(bullet).animate({top: '0%'} , {complete: bulletComplete(bullet)});
+
+		}
+		function bulletTravelLeft (bullet, i, j) {
+			$(bullet).animate({left: '0%'});
+		}
+		function bulletTravelDown (bullet, i, j) {
+			$(bullet).animate({top: '100%'});
+		}
+		function bulletTravelRight (bullet, i, j) {
+			$(bullet).animate({left: '100%'});
+		}
+		function bulletComplete (bullet) {
+			$(bullet).hide();
 		}
 	</script>
 </html>
