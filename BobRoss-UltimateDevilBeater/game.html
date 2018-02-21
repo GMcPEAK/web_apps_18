@@ -43,7 +43,7 @@
   			dude.style.left = x + "px";
   			dude.style.top = y + "px";
 
-  			var dir = Math.floor(Math.random() * 8);
+  			var dir = Math.floor(Math.random() * 9);
   			speed2 = Math.floor(Math.random() * (window.innerHeight));
 			if (dir == 0) { y2-=speed2; }
   			if (dir == 1) { x2-=speed2; }
@@ -53,6 +53,7 @@
 			if (dir == 5) { y2-=speed2; x2+=speed2; }
 			if (dir == 6) { y2+=speed2; x2-=speed2; }
 			if (dir == 7) { y2+=speed2; x2+=speed2; }
+			if (dir == 8) { y2+=speed2; x2+=speed2; }
   			var dev = document.getElementById("devil");
   			if (x2 <= 0) {
   				x2 = 0;
@@ -66,8 +67,17 @@
   			if (y2 >= window.innerHeight - 20) {
   				y2 = window.innerHeight - 20;
   			}
-  			$(dev).animate({top: y2 + "px"}, 200);
-  			$(dev).animate({left: x2 + "px"}, 200);
+  			if (dir == 0 || dir == 2) {
+  				$(dev).animate({top: y2 + "px"}, 200);
+  			} else if (dir == 1 || dir == 3) {
+  				$(dev).animate({left: x2 + "px"}, 200);
+  			} else if (dir == 8) {
+  				$(dev).animate({top: y2 + "px", left: x2 + "px"}, 200);
+  				enemyFire(dev, dir);
+  			} else {
+  				$(dev).animate({top: y2 + "px", left: x2 + "px"}, 200);
+  			}
+  			
   		}
 		
 		function keydowner(event) {
@@ -76,7 +86,7 @@
  			if (k == 65) { key_a = true; }
  			if (k == 83) { key_s = true; }
  			if (k == 68) { key_d = true; }
- 			if (k == 32) { fire(k) }
+ 			if (k == 32) { fire(k, x, y) }
 		}
 
 		function keyupper(event) {
@@ -87,37 +97,48 @@
  			if (k == 68) { key_d = false; }
 		}
 
-		function fire (k) {
+		function fire (k, i, j) {
 			var area = document.createElement("div");                     // Create a <div> element
 			var t = document.createTextNode("pew-pew");       // Create a text node
 			area.appendChild(t);                                          // Append the text to <p>
 			document.body.appendChild(area);
 			area.setAttribute("class", "moveable"); 
-			area.style.left = x + "px";
-			area.style.top = y + "px";
+			area.style.left = i + "px";
+			area.style.top = j + "px";
 			if (key_w == true) {
-				bulletTravelUp(area, x, y);
+				bulletTravelUp(area);
 			} else if (key_a == true) {
-				bulletTravelLeft(area, x, y);
+				bulletTravelLeft(area);
 			} else if (key_s == true) {
-				bulletTravelDown(area, x, y);
+				bulletTravelDown(area);
 			} else {
-				bulletTravelRight(area, x, y);
+				bulletTravelRight(area);
 			}                
 		}
-		function bulletTravelUp (bullet, i, j) {
+		function enemyFire (devil, dir) {
+			var area = document.createElement("div");                     // Create a <div> element
+			var t = document.createTextNode("pew-pew");       // Create a text node
+			area.appendChild(t);                                          // Append the text to <p>
+			document.body.appendChild(area);
+			area.setAttribute("class", "moveable"); 
+			area.style.left = devil.style.left;
+			area.style.top = devil.style.top;
+			bulletTravelRight(area);
+		}
+		
+		function bulletTravelUp (bullet) {
 			$(bullet).animate({top: '0%'});
 			setInterval(function(){$(bullet).hide()}, 400);
 		}
-		function bulletTravelLeft (bullet, i, j) {
+		function bulletTravelLeft (bullet) {
 			$(bullet).animate({left: '0%'});
 			setInterval(function(){$(bullet).hide()}, 400);
 		}
-		function bulletTravelDown (bullet, i, j) {
+		function bulletTravelDown (bullet) {
 			$(bullet).animate({top: '95%'});
 			setInterval(function(){$(bullet).hide()}, 400);
 		}
-		function bulletTravelRight (bullet, i, j) {
+		function bulletTravelRight (bullet) {
 			$(bullet).animate({left: '95%'});
 			setInterval(function(){$(bullet).hide()}, 400);
 		}
