@@ -2,13 +2,33 @@
 	position: absolute;
 }
 header {
-	background-color: #98FB98;
+	background-color: pink;
 	height: 50px;
+	display: block;
 	text-align: center;
 	z-index: 1000;
 }
 #logo {
 	height: 100%;
 	width: 10%;
-	text-align: center;
+	float: center;
+	background-color: #98FB98;
+}
+#bob-name {
+	float: left;
+}
+#devil-name {
+	float: right;
+}
+h2 {
+	text-shadow: -1px 1px white;
+	line-height: 0px;
+	vertical-align: middle;
+	font-size: 30px;
+}
+.bob-bullet {
+	position: absolute;
+}
+.devil-bullet {
+	position: absolute;	
 }
