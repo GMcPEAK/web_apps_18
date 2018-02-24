@@ -7,7 +7,7 @@
 	<body onload="setInterval(function(){gameloop();},35)"onkeydown="keydowner(event)"onkeyup="keyupper(event)" >
 		<header id = "infoBar">
 			<img src = "images/Ultimate-Devil-Beater-logo.png" id = "logo"></img>
-			<h2 id = "bob-name">Bob Ross (HP: 20)</h2>
+			<h2 id = "bob-name">Bob Ross (HP: 30)</h2>
 			<h2 id = "devil-name">The Devil (HP: 30)</h2>
 		</header>
 		<div class="moveable" id = "bob"><img src = images/Bob-Ross-Sprite.png id = "bob-img"></img></div>
@@ -27,7 +27,7 @@
 		var y2 = window.innerHeight - 20;
 		var speed2 = 0;
 
-		var bobHP = 20;
+		var bobHP = 30;
 		var devilHP = 30;
 
 		function gameloop() {
@@ -144,12 +144,15 @@
 
 		function fire (k, i, j) {
 			var area = document.createElement("div");                     // Create a <div> element
-			var t = document.createTextNode("pew-pew");       // Create a text node
+			var t = document.createElement("IMG");       // Create a text node
+			t.setAttribute("src", "images/Paint-Blob-Sprite.png");
+			t.setAttribute("width", "35");
+			t.setAttribute("height", "35");
 			area.appendChild(t);                                          // Append the text to <p>
 			document.body.appendChild(area);
 			area.setAttribute("class", "bob-bullet"); 
 			area.style.left = i + "px";
-			area.style.top = j + "px";
+			area.style.top = (j+50) + "px";
 			if (key_w == true) {
 				bulletTravelUp(area);
 			} else if (key_a == true) {
@@ -163,7 +166,10 @@
 		function enemyFire (devil) {
 			var bullSpeed = Math.floor(Math.random() * 4);
 			var area = document.createElement("div");                     // Create a <div> element
-			var t = document.createTextNode("pew-pew");       // Create a text node
+			var t = document.createElement("IMG");       // Create a text node
+			t.setAttribute("src", "images/Fire-Sprite.png");
+			t.setAttribute("width", "35");
+			t.setAttribute("height", "25");       // Create a text node
 			area.appendChild(t);                                          // Append the text to <p>
 			document.body.appendChild(area);
 			area.setAttribute("class", "devil-bullet"); 
