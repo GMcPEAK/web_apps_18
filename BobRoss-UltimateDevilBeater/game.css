@@ -32,3 +32,19 @@ h2 {
 .devil-bullet {
 	position: absolute;	
 }
+#bob-img {
+	height: 120px;
+	width: 100px;
+}
+#devil-img {
+	height: 100px;
+	width: 120px;
+}
+.flipped {
+    transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -khtml-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+}
