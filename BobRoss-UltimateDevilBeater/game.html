@@ -7,8 +7,8 @@
 	<body onload="setInterval(function(){gameloop();},35)"onkeydown="keydowner(event)"onkeyup="keyupper(event)" >
 		<header id = "infoBar">
 			<img src = "images/Ultimate-Devil-Beater-logo.png" id = "logo"></img>
-			<h2 id = "bob-name">Bob Ross (HP: 30)</h2>
-			<h2 id = "devil-name">The Devil (HP: 30)</h2>
+			<h2 id = "bob-name">Bob Ross (HP: 20)</h2>
+			<h2 id = "devil-name">The Devil (HP: 35)</h2>
 		</header>
 		<div class="moveable" id = "bob"><img src = images/Bob-Ross-Sprite.png id = "bob-img"></img></div>
 		<div class="moveable" id = "devil"><img src = images/Devil-Sprite.png id = "devil-img"></img></div>
@@ -27,8 +27,8 @@
 		var y2 = window.innerHeight - 20;
 		var speed2 = 0;
 
-		var bobHP = 30;
-		var devilHP = 30;
+		var bobHP = 20;
+		var devilHP = 35;
 
 		function gameloop() {
   			if (key_w) { y-=speed; }
@@ -106,7 +106,7 @@
 				}
 			}
 			if (bobHP == 0) {
-				//window.location.href = "defeat.html";
+				window.location.href = "defeat.html";
 			}
 			var dangers2 = document.getElementsByClassName("bob-bullet");
 			for (var i = 0; i < dangers2.length; i++) {
@@ -122,7 +122,7 @@
 				}
 			}
 			if (devilHP == 0) {
-				//window.location.href = "victory.html";
+				window.location.href = "victory.html";
 			}
 		}
 		function keydowner(event) {
@@ -146,8 +146,8 @@
 			var area = document.createElement("div");                     // Create a <div> element
 			var t = document.createElement("IMG");       // Create a text node
 			t.setAttribute("src", "images/Paint-Blob-Sprite.png");
-			t.setAttribute("width", "35");
-			t.setAttribute("height", "35");
+			t.setAttribute("width", "25");
+			t.setAttribute("height", "25");
 			area.appendChild(t);                                          // Append the text to <p>
 			document.body.appendChild(area);
 			area.setAttribute("class", "bob-bullet"); 
@@ -159,9 +159,11 @@
 				bulletTravelLeft(area);
 			} else if (key_s == true) {
 				bulletTravelDown(area);
-			} else {
+			} else if (key_d == true) {
 				bulletTravelRight(area);
-			}               
+			}  else {
+				$(area).hide();
+			}             
 		}
 		function enemyFire (devil) {
 			var bullSpeed = Math.floor(Math.random() * 4);

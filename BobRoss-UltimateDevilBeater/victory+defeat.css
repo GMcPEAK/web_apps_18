@@ -10,6 +10,9 @@ h2 {
 	text-shadow: -1px 1px white;
 	font-size: 45px;
 }
+.happy-accidents {
+	color: magenta;
+}
 img {
 	height: 25%;
 	width: 25%;
@@ -20,10 +23,12 @@ a {
 	font-size: 20px;
 }
 #victory {
-	background-color: #87CEFA;
+    background-image: url("images/victory-screen-background.jpeg");
+    background-size: 100%;
 }
 #defeat {
-	background-color: #FEAEC9;
+	background-image: url("images/defeat-screen-background.jpeg");
+    background-size: 100%;
 }
 iframe {
 	border: 0px;

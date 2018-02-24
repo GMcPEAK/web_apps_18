@@ -1,3 +1,7 @@
+body{
+    background-image: url("images/game-screen-background.jpeg");
+    background-size: 100%;
+}
 .moveable {
 	position: absolute;
 }
