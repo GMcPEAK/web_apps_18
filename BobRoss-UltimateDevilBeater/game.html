@@ -152,9 +152,14 @@
 			t.setAttribute("height", "25");
 			area.appendChild(t);                                          // Append the text to <p>
 			document.body.appendChild(area);
-			area.setAttribute("class", "bob-bullet"); 
-			area.style.left = i + "px";
-			area.style.top = (j+50) + "px";
+			area.setAttribute("class", "bob-bullet");
+			if ($(document.getElementById("bob")).hasClass('flipped')){
+				area.style.left = (i-25) + "px";
+				$(area).addClass('flipped');
+			} else {
+				area.style.left = (i+100) + "px";
+			}
+			area.style.top = (j+45) + "px";
 			if (key_w == true) {
 				bulletTravelUp(area);
 			} else if (key_a == true) {
