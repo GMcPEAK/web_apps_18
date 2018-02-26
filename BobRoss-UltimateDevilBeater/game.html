@@ -103,6 +103,7 @@
 				if (overlap == true) {
 					bobHP--;
 					document.getElementById("bob-name").innerHTML = "Bob Ross (HP: " + bobHP + ")";
+					$(dangers[i]).hide();
 				}
 			}
 			if (bobHP == 0) {
@@ -119,6 +120,7 @@
 				if (overlap2 == true) {
 					devilHP--;
 					document.getElementById("devil-name").innerHTML = "The Devil (HP: " + devilHP + ")";
+					$(dangers2[i]).hide();
 				}
 			}
 			if (devilHP == 0) {
