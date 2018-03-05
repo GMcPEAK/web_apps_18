@@ -1,0 +1,22 @@
+<!--Mr. Kramer's chatroom example code.-->
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+ setInterval(function(){
+  $("#board").load("stuffp.html");
+ },1000);
+ $("#sub").click(function(){
+  $.post("update.php",{thingy:$("#asdf").text()}); //use .val() if you want javascript to work
+  $("#asdf").val("");
+ });
+});
+</script>
+</head>
+<body>
+<p id="board"></p>
+<input type="text" id="asdf"></input>
+<button id="sub">SUBMIT</button>
+</body>
+</html>
